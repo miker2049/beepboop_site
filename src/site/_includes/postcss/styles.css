@@ -20,19 +20,20 @@ html {
 }
 
 body {
-  text-align: center;
+  text-align:center;
   background-color: $page-color;
   color: mix($text-color, $page-color, 90%);
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: 'Roboto Mono', monospace;
   font-weight: 300;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.8;
   min-height: 100vh;
   background:  $page-color;
-  background: url(/images/bg-grid.png), linear-gradient(320deg, $page-color 0%, $accent-color 100%);
+  background: linear-gradient(180deg, $page-color 0%, $accent-color 100%);
 
   @media (min-width: $narrow) {
-    font-size: 18px;
+    font-size: 14px;
   };
 }
 
@@ -58,16 +59,16 @@ h1, h2, h3 {
   line-height: 1;
 }
 h1 {
-  font-size: 3em;
+  font-size: 2em;
   margin-top:0.4em;
   margin-bottom:0.2em;
   line-height: 1;
 
   @media (min-width: $mid) {
-    font-size: 5em;
+    font-size: 2em;
   };
   @media (min-width: $wide) {
-    font-size: 6em;
+    font-size: 3em;
   };
 }
 
