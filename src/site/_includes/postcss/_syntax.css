@@ -3,6 +3,7 @@
  * Inspired by Github syntax coloring
  */
 
+@import '_variables.css';
  code[class*="language-"],
  pre[class*="language-"] {
      color: rgb(42, 65, 77);
@@ -50,11 +51,12 @@
  .token.doctype,
  .token.cdata {
      color: #7e94ac;
+     /* color: #b3d4fc; */
      font-style: italic;
  }
 
  .token.namespace {
-     opacity: .7;
+     /* opacity: .7; */
  }
 
  .token.string,
@@ -64,6 +66,7 @@
  .token.punctuation,
  .token.operator {
      color: #393A34; /* no highlight */
+     /* color: #7e94ac; */
  }
 
  .token.entity,

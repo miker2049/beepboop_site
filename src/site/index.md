@@ -1,10 +1,11 @@
 ---
 title: beep boop site
 subtitle: Made by <a href="https://twitter.com/miker2049">mike</a> for <a href="https://twitter.com/miker2049">turtle</a>.
-layout: layouts/base.njk
+layout: layouts/home.njk
+tags: home
 ---
-A web home for all things beep boop, a.k.a Mike Russo.
 
+A web home for all things beep boop, a.k.a Mike Russo.
 ## Bloggey pages
 
 Various posts that are more journal than techincal or fiction.

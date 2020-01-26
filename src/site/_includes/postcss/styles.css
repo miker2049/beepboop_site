@@ -1,6 +1,35 @@
 @import '_variables.css';
 @import '_syntax.css';
 
+
+@mesh-grid {
+    column-count: 12;
+    compile: true;
+    container-width: 100%;
+    display-type: flex;
+    gutter-on-outside: false;
+    gutter: 15px;
+    name: mesh;
+    query-condition: min-width;
+    responsive-gutter: false;
+    @mesh-viewport-sm {
+        container-width: 540px;
+        viewport: 576px;
+    }
+    @mesh-viewport-md {
+        container-width: 720px;
+        viewport: 768px;
+    }
+    @mesh-viewport-lg {
+        container-width: 960px;
+        viewport: 992px;
+    }
+    @mesh-viewport-xl {
+        container-width: 1140px;
+        viewport: 1200px;
+    }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -15,53 +44,45 @@
   color: $page-color;
 }
 
-html {
-  background-color: $accent-color;
-}
-
 body {
-  text-align:center;
-  background-color: $page-color;
   color: mix($text-color, $page-color, 90%);
-  /* font-family: sans-serif; */
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
   font-size: 14px;
   line-height: 1.8;
   min-height: 100vh;
-  background:  $page-color;
-  background: linear-gradient(180deg, $page-color 0%, $accent-color 100%);
+  background: linear-gradient(90deg, $page-color 0%, $page-color2 100%);
 
   @media (min-width: $narrow) {
-    font-size: 14px;
+    font-size: 18px;
   };
 }
 
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  text-align: left;
-  @media (min-width: $mid) {
-    width: 600px;
-  };
-  @media (min-width: $wide) {
-    width: 700px;
-  };
+  width:100%;
+  /* @media (min-width: $mid) { */
+  /*   width: 600px; */
+  /* }; */
+  /* @media (min-width: $wide) { */
+  /*   width: 100%; */
+  /* }; */
 }
 
 
 h1, h2, h3 {
   color: $text-color;
   font-weight: 600;
-  margin-top: 2em;
+  margin-top: 1em;
   margin-bottom:0.2em;
   line-height: 1;
+  text-align: inherit;
 }
 h1 {
   font-size: 2em;
-  margin-top:0.4em;
-  margin-bottom:0.2em;
+  /* margin-top:0.4em; */
+  /* margin-bottom:0.2em; */
   line-height: 1;
 
   @media (min-width: $mid) {
@@ -80,7 +101,7 @@ p {
 .subtitle {
   font-size: 1.2em;
   margin-top: 1em;
-  margin-bottom: 5em;
+  margin-bottom: 3em;
 }
 
 ul, ol {
@@ -107,12 +128,17 @@ a:focus {
 .nakedLink a:focus {
   border-bottom-style:none;
 }
+.header{
+    background-color:rgba(0,0,0,0.1);
+    h1, .subtitle{
+    }
+}
 
 .nav {
   padding-top: 3em;
 
   li {
-    display: inline;
+      display: inline;
   }
 
   a:link,
@@ -133,7 +159,7 @@ a:focus {
   }
   a:hover,
   a:focus {
-      color: $text-color;
+      color: mix($text-color, $accent-color, 10%);
       border-top-color: $text-color;
       border-bottom-style: none;
   }
@@ -163,12 +189,13 @@ code {
   font-style: italic;
 }
 
-main {
-  margin-top: 4em;
-}
+/* main { */
+/*   margin-top: 4em; */
+/* } */
 
 pre {
   overflow: auto;
+  max-width:75%;
   border-radius: 6px;
   code {
     border-style: none;
@@ -200,4 +227,27 @@ footer {
     color: $text-color;
     border-bottom: solid 1px $text-color;
   }
+}
+
+.posts {
+    p, h2, h3, h4, h5 {
+        max-width:50%;
+    }
+    margin-left: 20px;
+    
+}
+
+#homeText{
+    text-align: left;
+    margin-top: 1em;
+}
+
+img{
+    margin-top:1em;
+    height:auto;
+    width: 100%;
+}
+.posts{
+    /* margin: 8em; */
+    /* background-color: green; */
 }
