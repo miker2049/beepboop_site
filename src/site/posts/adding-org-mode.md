@@ -211,4 +211,3 @@ The function takes in a big string, directed from eleventy's build process and m
 
 Once this process is done, I have availble all the data I need to render my html:
 
-{% highlight "liquid"%}

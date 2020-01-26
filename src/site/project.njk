@@ -1,0 +1,10 @@
+---
+pagination:
+   data: projects
+   size: 1
+   alias: project
+permalink: "projects/{{ project.title | slug }}/"
+---
+<h2>{{project.title}}</h2>
+
+{{project.html | safe }}

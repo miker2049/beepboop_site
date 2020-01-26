@@ -1,5 +1,13 @@
 ---
+
 layout: layouts/base.njk
+
 ---
 
-{{projects[11].html | safe }}
+<ul class="listing">
+    {%- for project in projects -%}
+        <li>
+            <a href="{{ project.title | slug }}">{{ project.title }}</a> 
+        </li>
+    {%- endfor -%}
+</ul>

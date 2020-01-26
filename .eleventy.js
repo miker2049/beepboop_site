@@ -49,7 +49,7 @@ module.exports = function(config) {
         dir: {
             input: "src/site",
             output: "dist",
-            data: `_data/${env}`
+            data: `_data`
         },
         templateFormats : ["njk", "md", "11ty.js", "html"],
         htmlTemplateEngine : "njk",
