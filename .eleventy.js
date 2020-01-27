@@ -13,6 +13,7 @@ module.exports = function(config) {
     config.addDataExtension('org', contents =>{
         let parsed =orgParse(contents);
         // console.log(parsed);
+        parsed = parsed.filter(project=>{return project.keyword==="DONE" });
         return parsed;
     });
 

@@ -7,6 +7,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "debug": "cross-env DEBUG=Eleventy* ELEVENTY_ENV=dev eleventy --serve",
     "build": "cross-env ELEVENTY_ENV=prod eleventy",
     "seed": "cross-env ELEVENTY_ENV=seed eleventy"
   },
@@ -22,7 +23,7 @@
     "dotenv": "^8.2.0",
     "html-minifier": "^4.0.0",
     "install": "^0.13.0",
-    "luxon": "^1.21.3",
+    "luxon": "^1.22.0",
     "npm": "^6.13.6",
     "orga": "^1.7.0",
     "orga-rehype": "^1.7.0",

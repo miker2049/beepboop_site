@@ -149,7 +149,7 @@ The `addDataExtension` here deals specifically (as far as I can tell with the wa
   * utils/
     * org/
       * test.js
-      * **org_parser.js**
+      * **org_parser.js** <--------
     * filters/
     * minify-html.js
   * site/
@@ -159,12 +159,12 @@ The `addDataExtension` here deals specifically (as far as I can tell with the wa
     * css/
     * __includes/
     * __data/
-      * **projects.org**
+      * **projects.org** <---------
     * projects.njk
   * functions/
 * dist/ 
 * package.json
-* **.eleventy.js**
+* **.eleventy.js** <--------
 
 </div>
 
@@ -176,7 +176,7 @@ const parse = require('orga-unified');
 const mutate = require('orga-rehype');
 const html = require('rehype-stringify');
 const visit = require('unist-util-visit');
-const select = require('unist-util-select').select;
+const {select, selectAll} = require('unist-util-select');
 
 module.exports=function(contents){
     const tree = unified().use(parse).parse(contents);
@@ -188,9 +188,12 @@ module.exports=function(contents){
         if(node.type==='section' && node.level ===1){
             const title =select(':root headline text',node).value;
             const {tags, keyword, priority}= select(':root headline',node);
-            const orgText = select(':root section',node);
-            const hast = orgText ? htmlize.runSync(orgText) : null;
-            const htmlString = hast ? htmlize.stringify(hast): null;
+            const orgText = selectAll(':scope > section',node);
+            let htmlString = "";
+            for (let i=0;i<orgText.length;i++){
+                let hast = orgText[i] ? htmlize.runSync(orgText[i]) : null ;
+                htmlString += hast ? htmlize.stringify(hast): null;
+            }
             sectionArr.push({
                 title: title,
                 keyword: keyword,
@@ -205,9 +208,66 @@ module.exports=function(contents){
 
 {% endhighlight %}
 
-As you can see, I use [unified](https://github.com/unifiedjs/unified) and [orga](https://github.com/orgapp/orgajs) for my parsing, mutating, and converting-to-html needs.
+I use [unified](https://github.com/unifiedjs/unified) and [orga](https://github.com/orgapp/orgajs) for my parsing, mutating, and converting-to-html needs.
 
 The function takes in a big string, directed from eleventy's build process and my custom data extension method. This is then turned into a AST tree.  The `visit` function then looks for top level headings/sections in the org file, and for each one adds an object to an array.  
 
-Once this process is done, I have availble all the data I need to render my html:
+Once this process is done, I have availble all the data I need to render my html.  I have two template files, `projects.njk` and `project.njk` for both the index page that links to all the projects, but the generation of separate pages for each top level heading marked "DONE" in the org file.  I can use org-modes built in TODO system to control what pages I have published or not from within the org file.  I can also easily just generate the entire page as on html page, just a simple nunjucks iteration for that if needed!
 
+#### projects.njk ####
+
+{% highlight "liquid" %}
+---
+
+layout: layouts/base.njk
+
+---
+{% raw %}
+<ul class="listing">
+    {%- for project in projects -%}
+        <li>
+            <a href="{{ project.title | slug }}">{{ project.title }}</a> 
+        </li>
+    {%- endfor -%}
+</ul>
+{% endraw %}
+{% endhighlight %}
+
+#### project.njk ####
+
+{% highlight "liquid" %}
+{% raw %}
+
+---
+layout: layouts/base.njk
+pagination:
+   data: projects
+   size: 1
+   alias: project
+permalink: "projects/{{ project.title | slug }}/"
+---
+<h2>{{project.title}}</h2>
+
+{{project.html | safe }}
+{% endraw %}
+{% endhighlight %}
+
+#### example concantenated file ####
+
+{% highlight "liquid" %}
+{% raw %}
+
+---
+layout: layouts/base.njk
+pagination:
+   data: projects
+   size: 1
+   alias: project
+permalink: "projects/{{ project.title | slug }}/"
+---
+    {%- for project in projects -%}
+       <h1>{{ project.title }}</h1>
+       {{ project.html | safe }}
+    {%- endfor -%}
+{% endraw %}
+{% endhighlight %}

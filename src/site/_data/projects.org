@@ -2,7 +2,8 @@
 #+TODO: TODO NEXT | DONE
 #+TODO: DRAFT | PUBLISHED
 #+CATEGORY: posts
-* TODO N64 hacking                                                    :toBuy:
+* DONE N64 hacking                                                    :toBuy:
+  CLOSED: [2020-01-26 Sun 18:45]
 ** Gameshark codes reference
 *** the first two nums
 The very first two digits of the code, however, are not part of the address
@@ -20,32 +21,30 @@ Again, many thanks to the GSCCC for the above info. More on prefixes will be
 in section 5. For now, keep in mind the range of the code. If you want a
 code to give you 400 kills, a code that only goes up to 255 will not do.
 *** mupen debugger read
-mem
-  Print memory values. Several forms are supported:
+  - Print memory values. Several forms are supported:
   
-  mem <addr>        Print one 32-bit word at <addr>
+  - mem <addr>        Print one 32-bit word at <addr>
   
-  mem /N <addr>     Print <N> 32-bit words at <addr>
-  mem /Nb <addr>    Print <N> 8-bit bytes at <addr>
-  mem /Nh <addr>    Print <N> 16-bit half-words at <addr>
-  mem /Nw <addr>    Print <N> 32-bit words at <addr>
-  mem /Nd <addr>    Print <N> 64-bit double-words at <addr>
+  - mem /N <addr>     Print <N> 32-bit words at <addr> 
+  - mem /Nb <addr>    Print <N> 8-bit bytes at <addr>
+  - mem /Nh <addr>    Print <N> 16-bit half-words at <addr>
+  - mem /Nw <addr>    Print <N> 32-bit words at <addr>
+  - mem /Nd <addr>    Print <N> 64-bit double-words at <addr>
 
-  mem /NxM <addr>   Print <N> rows of <M> 32-bit words at <addr>
-  mem /NxMb <addr>  Print <N> rows of <M> 8-bit bytes at <addr>
-  mem /NxMh <addr>  Print <N> rows of <M> 16-bit half-words at <addr>
-  mem /NxMw <addr>  Print <N> rows of <M> 32-bit words at <addr>
-  mem /NxMd <addr>  Print <N> rows of <M> 64-bit double-words at <addr>
+  - mem /NxM <addr>   Print <N> rows of <M> 32-bit words at <addr>
+  - mem /NxMb <addr>  Print <N> rows of <M> 8-bit bytes at <addr>
+  - mem /NxMh <addr>  Print <N> rows of <M> 16-bit half-words at <addr>
+  - mem /NxMw <addr>  Print <N> rows of <M> 32-bit words at <addr>
+  - mem /NxMd <addr>  Print <N> rows of <M> 64-bit double-words at <addr>
 *** mupen debugger write
-write
-  Write values to memory. Several forms are supported:
+  - Write values to memory. Several forms are supported:
 
-  write <addr> <value>    Write a (1) byte value to <addr>
+  - write <addr> <value>    Write a (1) byte value to <addr>
 
-  write <addr> b <value>  Write a (1) byte value to <addr>
-  write <addr> h <value>  Write a half-word value (2 bytes) to <addr>
-  write <addr> w <value>  Write a word value (4 bytes) to <addr>
-  write <addr> d <value>  Write a double-word value (8 bytes) to <addr>
+  - write <addr> b <value>  Write a (1) byte value to <addr>
+  - write <addr> h <value>  Write a half-word value (2 bytes) to <addr>
+  - write <addr> w <value>  Write a word value (4 bytes) to <addr>
+  - write <addr> d <value>  Write a double-word value (8 bytes) to <addr>
 ** ocarina
 *** codes from web
 | code              | hark                            | mupen write?          | calculate decimal |
@@ -118,7 +117,8 @@ love.graphics.draw( drawable, x, y, r, sx, sy, ox, oy, kx, ky )
 ** Tiles
 *** "zelda like tiles"
 https://opengameart.org/content/zelda-like-tilesets-and-sprites
-* orac interface project
+* DONE orac interface project
+  CLOSED: [2020-01-26 Sun 18:45]
 ** possible api to use
 [[https://github.com/cwilso/WebAudio][webaudio API]]
 electron js too!
@@ -134,7 +134,8 @@ make like a arpegiator
 - play phrases with start note
 ** midi delay
 ** midi sustainer
-* beepbooptheory
+* DONE beepbooptheory
+  CLOSED: [2020-01-26 Sun 18:45]
 ** turtle
 *** Squirrel Letter                                                   
 **** Fixes, lookbacks 
