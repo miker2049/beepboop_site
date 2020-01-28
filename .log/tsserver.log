@@ -1439,3 +1439,5 @@ Info 1429 [16:4:16.753] Different program with same set of files:: oldProgram.st
 Info 1430 [16:4:16.753] Structure before ensureProjectForOpenFiles:
 Info 1431 [16:4:16.753] Structure after ensureProjectForOpenFiles:
 Info 1432 [16:4:16.753] got projects updated in background, updating diagnostics for /home/mik/webDev/beepboop_site/.eleventy.js,/home/mik/webDev/beepboop_site/src/utils/vimeoEmbed.js,/home/mik/webDev/beepboop_site/src/site/_data/site.js
+Info 1433 [16:24:59.978] DirectoryWatcher:: Triggered with /home/mik/webDev/beepboop_site/src/site/images/fuzzlights.jpg :: WatchInfo: /home/mik/webDev/beepboop_site/src 1 Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations
+Info 1434 [16:24:59.979] Elapsed:: 1ms DirectoryWatcher:: Triggered with /home/mik/webDev/beepboop_site/src/site/images/fuzzlights.jpg :: WatchInfo: /home/mik/webDev/beepboop_site/src 1 Project: /dev/null/inferredProject1* WatchType: Failed Lookup Locations

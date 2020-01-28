@@ -338,3 +338,4 @@ found 0 vulnerabilities
     {"projectName":"/dev/null/inferredProject3*","typeAcquisition":{"enable":true,"include":[],"exclude":[]},"compilerOptions":{"target":1,"jsx":1,"allowNonTsExtensions":true,"allowJs":true,"noEmitForJsFiles":true,"maxNodeModuleJsDepth":2},"typings":[],"unresolvedImports":[],"kind":"action::set"}
 [16:2:22.679] Response has been sent.
 [16:2:22.679] No new typings were requested as a result of typings discovery
+[16:24:59.977] DirectoryWatcher:: Triggered with /home/mik/webDev/beepboop_site/src/site/images/fuzzlights.jpg :: WatchInfo: /home/mik/webDev/beepboop_site/src recursive :: handler is already invoked 'false'
