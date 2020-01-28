@@ -48,13 +48,13 @@ body {
   color: mix($text-color, $page-color, 90%);
   font-family: 'Roboto Mono', monospace;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 1.8;
   min-height: 100vh;
   background: linear-gradient(90deg, $page-color 0%, $page-color2 100%);
 
   @media (min-width: $narrow) {
-    font-size: 18px;
+    font-size: 14px;
   };
 }
 
@@ -128,7 +128,7 @@ a:focus {
 .nakedLink a:focus {
   border-bottom-style:none;
 }
-.header{
+.home-header{
     background-color:rgba(0,0,0,0.1);
     h1, .subtitle{
     }
@@ -232,9 +232,11 @@ footer {
 .posts {
     p, h2, h3, h4, h5 {
         max-width:50%;
+        @media (max-width: $wide) {
+            max-width: 90%;
+        };
     }
     margin-left: 20px;
-    
 }
 
 #homeText{
@@ -247,7 +249,15 @@ img{
     height:auto;
     width: 100%;
 }
-.posts{
-    /* margin: 8em; */
-    /* background-color: green; */
+.gallery-video{
+    padding:66.27% 0 0 0;
+    position:relative;
+    .vimeo-embed{
+        width:100%;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+    }
 }

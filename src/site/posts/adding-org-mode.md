@@ -1,5 +1,7 @@
 ---
 title: Adding simple org-mode support to my site
+tags: tech 
+date: Last Modified
 ---
 
 Ok, so I as I am getting more serious about this site, or rather, as I slowly become more and more desperate to do anything at all, I consider what I want:

@@ -1,0 +1,6 @@
+
+* TODOs
+** TODO figure out how to disable permalinks for video embed files 
+  [[file:src/site/videos/videos.json::"permalink":true,][here]] 
+** TODO patchloop database
+** TODO import beep boop theory

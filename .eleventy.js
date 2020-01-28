@@ -1,4 +1,6 @@
 const orgParse = require('./src/utils/org/org_parser');
+const vimeoEmbed = require('./src/utils/vimeoEmbed');
+const vimeoEmbedRaw = require('./src/utils/vimeoEmbedRaw');
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 
@@ -13,9 +15,18 @@ module.exports = function(config) {
     config.addDataExtension('org', contents =>{
         let parsed =orgParse(contents);
         // console.log(parsed);
-        parsed = parsed.filter(project=>{return project.keyword==="DONE" });
+        parsed = parsed.filter(project=>{return project.keyword==="PUBLISH" });
         return parsed;
     });
+
+    config.addCollection("tposts", function(collection) {
+        return collection.getFilteredByTags("post", "tech");
+    });
+
+    config.addCollection("oposts", function(collection) {
+        return collection.getFilteredByTags("post", "other");
+    });
+    config.setDataDeepMerge(true);
 
     // Add some utility filters
     config.addFilter("squash", require("./src/utils/filters/squash.js") );
@@ -39,10 +50,10 @@ module.exports = function(config) {
         return minified.code;
     });
 
-
+    config.addShortcode("vimeoEmbed", function(title, id) {return vimeoEmbed(title,id);});
+    config.addShortcode("vimeoEmbedRaw", function(title, id) {return vimeoEmbedRaw(title,id);});
     // pass some assets right through
     config.addPassthroughCopy("./src/site/images");
-    config.addPassthroughCopy("./src/site/videos");
 
     // make the seed target act like prod
     env = (env=="seed") ? "prod" : env;

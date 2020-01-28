@@ -1,6 +1,7 @@
 ---
 title: Notable Music from 2019
 date: 2019-11-20 
+tags: other
 ---
 Some reflections on music released in 2019.
 

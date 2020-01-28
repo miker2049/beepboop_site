@@ -1,9 +1,14 @@
 #+ORGA_PUBLISH_KEYWORD: PUBLISHED
-#+TODO: TODO NEXT | DONE
-#+TODO: DRAFT | PUBLISHED
+#+TODO: DRAFT | PUBLISH
+#+TODO: TODO | DONE
 #+CATEGORY: posts
-* DONE N64 hacking                                                    :toBuy:
-  CLOSED: [2020-01-26 Sun 18:45]
+
+* PUBLISH midigrid 
+  CLOSED: [2020-01-26 Sun 23:42]
+A multi-device norns api for emulating monome grids with midi grid devices.
+
+
+* N64 hacking                                                         :toBuy:
 ** Gameshark codes reference
 *** the first two nums
 The very first two digits of the code, however, are not part of the address
@@ -117,8 +122,7 @@ love.graphics.draw( drawable, x, y, r, sx, sy, ox, oy, kx, ky )
 ** Tiles
 *** "zelda like tiles"
 https://opengameart.org/content/zelda-like-tilesets-and-sprites
-* DONE orac interface project
-  CLOSED: [2020-01-26 Sun 18:45]
+* orac interface project
 ** possible api to use
 [[https://github.com/cwilso/WebAudio][webaudio API]]
 electron js too!
@@ -134,8 +138,7 @@ make like a arpegiator
 - play phrases with start note
 ** midi delay
 ** midi sustainer
-* DONE beepbooptheory
-  CLOSED: [2020-01-26 Sun 18:45]
+* beepbooptheory
 ** turtle
 *** Squirrel Letter                                                   
 **** Fixes, lookbacks 
@@ -296,7 +299,8 @@ And a little after this... "the proof of termination..." (17)
 **  passages
 *** 179
     Some time then there will be every kind of history of every one who ever can or is or was or will be living.  Some time then there will be a history of every one from their beginning to their ending.  Sometime then there will be a history of all of them, of every kind of them, of every one, of every bit of living they ever have in them, of them when there is never more than a beginning to them, of every kind of them, of every one when there is very little beginning and then there is an ending, there will then sometime be a history of every one there will be a history of everything that ever was or is or will be them, of everything that was or is or will be all of any one or all of all of them.  Sometime then there will be a history of every one, of everything or anything that is all them or any part of them and sometime then there will be a history of how anything or everything comes out from every one, comes out from every one or any one from the beginning to the ending being in them.  Sometime then there must be a history of every one who ever was or is or will be living.  
-* 30 birthday songs
+* PUBLISH 30 birthday songs
+  CLOSED: [2020-01-27 Mon 00:03]
 ** songs
  |  N |                  |
  |----+------------------|

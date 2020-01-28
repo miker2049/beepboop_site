@@ -4,7 +4,9 @@ pagination:
    data: projects
    size: 1
    alias: project
+   addAllPagesToCollections: true
 permalink: "projects/{{ project.title | slug }}/"
+tags: projects
 ---
 <h2>{{project.title}}</h2>
 

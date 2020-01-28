@@ -13,9 +13,13 @@ module.exports=function(contents){
     let sectionArr = [];
     visit(tree, function(node) {
         if(node.type==='section' && node.level ===1){
-            const title =select(':root headline text',node).value;
+            const title =select(':scope headline text',node).value;
             const {tags, keyword, priority}= select(':root headline',node);
-            const orgText = selectAll(':scope > section',node);
+            const  planningNode = select(':scope headline planning',node);
+            const date = planningNode ? planningNode.date : null;
+            const orgText = selectAll(':scope > :not(headline)',node);
+            // console.log("////////////////////////////////////////////////////////////////////////////////////////////////");
+            // console.log();
             let htmlString = "";
             for (let i=0;i<orgText.length;i++){
                 let hast = orgText[i] ? htmlize.runSync(orgText[i]) : null ;
@@ -26,7 +30,8 @@ module.exports=function(contents){
                 keyword: keyword,
                 tags: tags,
                 priority: priority,
-                html: htmlString
+                html: htmlString,
+                date:date
             });
         }
     });

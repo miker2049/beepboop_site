@@ -1,6 +1,7 @@
 ---
 title: Repitition and sound
 date: 2018-03-21
+tags: tech
 ---
 
 In his short preface to Gertrude St

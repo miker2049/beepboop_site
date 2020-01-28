@@ -9,7 +9,7 @@ Posted on
 <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
 </p>
 <main class="posts">
-   <div class="pasts">
+   <div class="posts">
       {{ content | safe }}
    </div>
    <div class="footnote">

@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+pagination:
+   data: videos
+   size: 1
+   alias: vid
+   addAllPagesToCollections: true
+   permalink: "videos/{{ vid.title | slug }}/"
+tags: video
+---
+
+{% vimeoEmbed vid.title, vid.id %}
