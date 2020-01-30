@@ -12,8 +12,8 @@ subtitle: Made by <a href="https://twitter.com/miker2049">mike</a> for <a href="
         <title>{{ title }}</title>
     </head>
     <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
-        <div class="container">
-            {% include "home_header.njk" %}
+        {% include "home_header.njk" %}
+        <div class="home-container">
             <div class="mesh-container">
                 <div class="mesh-void">
                     <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">

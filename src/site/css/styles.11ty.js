@@ -24,6 +24,7 @@ module.exports = class {
             require('lost'),
             require('postcss-mixins'),
             require('postcss-color-mix'),
+            require('postcss-color-function'),
             require('postcss-mesh'),
             require('cssnano')
         ])

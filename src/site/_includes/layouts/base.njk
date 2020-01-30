@@ -9,8 +9,8 @@
   </head>
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
 
+      {% include "header.njk" %}
     <div class="container">
-        {% include "header.njk" %}
         {{ content | safe }}
         {% include "footer.njk" %}
     </div>

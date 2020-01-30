@@ -6,7 +6,10 @@ $wide: 1200px;
 /* colours */
 $page-color:#f5f7fa;
 $page-color2:#c3cfe2;
+$head-color: color($page-color shade(20%));
+$head-color2: color($page-color2 shade(20%));
 $text-color:#000000;
 $accent-color:#696969;
 $dark-color: #000;
-
+$background-gradient: linear-gradient(90deg, $page-color 0%, $page-color2 100%);
+$header-gradient: linear-gradient(90deg, $head-color 0%, $head-color2 100%);
