@@ -6,11 +6,3 @@ templateEngineOverride: njk
 
 ### Yes, _I_ made this
 Here look!
-
-{% set js %}
-<div class="container">
-    {% include "js/test.js" %}
-</div>
-{% endset %}
-
-<script>{{ js | jsmin | safe }}</script>

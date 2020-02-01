@@ -3,13 +3,15 @@ layout: layouts/base.njk
 pageClass: posts
 templateEngineOverride: njk, md
 ---
-
+<main class="posts">
+<span>
+<h1 class="posts"> {{title}} </h1>
 <p class="date">
 Posted on 
 <time datetime="{{ date }}">{{ date | dateDisplay }}</time>
 </p>
-<main class="posts">
-   <div class="posts">
+</span>
+<div class="posts">
       {{ content | safe }}
    </div>
    <div class="footnote">

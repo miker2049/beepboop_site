@@ -4,100 +4,90 @@ subtitle: Made by <a href="https://twitter.com/miker2049">mike</a> for <a href="
 ---
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/css/styles.css">
-        <title>{{ title }}</title>
-    </head>
-    <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
-        {% include "home_header.njk" %}
-        <div class="home-container">
-            <div class="mesh-container">
-                <div class="mesh-void">
-                    <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">
-                        <p><h4>This site is very much under construction! thanks for ur patience</h4></p>
-                        <p>Repository and portfolio for Michael Russo.  This includes a selection of videos and images created by him, as well as various writings, notes, and text dumps of working projects.</p>  
 
-                        <h2>Technical writing</h2>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>{{ title }}</title>
+</head>
 
-                        <p>Write ups and walk throughs of various programming and development issues and projects I have undertaken.</p>   
+<body>
+    {% include "home_header.njk" %}
+    <div class="home-intro-text">
+        <p>
+            <h4>This site is very much under construction! thanks for ur patience</h4>
+        </p>
+        <p>Repository and portfolio for Michael Russo. This includes a selection of videos and images created by him, as well as various writings, notes, and text dumps of working projects.</p>
+    </div>
+    <div class="home-container">
+        <div>
 
-                        <ul class="listing">
-                            {%- for page in collections.tposts | reverse -%}
-                                <li>
-                                    <a href="{{ page.url }}">{{ page.data.title }}</a> -
-                                    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time>
-                                </li>
-                            {%- endfor -%}
-                        </ul>
-                    </div>
-                    <div class="mesh-column-md-5 mesh-column-sm-12 mesh-push-md-1 ">
-                        <image src="images/birds.png"></image>
-                    </div>
-                </div>
-                <div class="mesh-void">
-                    <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">
-                        <h2>Other writings</h2>
-                        <p> Write ups on culture and music and things like that. </p>
-                        <ul class="listing">
-                            {%- for page in collections.oposts | reverse -%}
-                                <li>
-                                    <a href="{{ page.url }}">{{ page.data.title }}</a> -
-                                    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time>
-                                </li>
-                            {%- endfor -%}
-                        </ul>
-                    </div>
-                    <div class="mesh-column-md-5 mesh-column-sm-12 mesh-push-md-1 ">
-                        <image src="images/boat4.jpg"></image>
-                    </div>
-                </div>
-                <div class="mesh-void">
-                    <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">
-                        <h2>Current projects</h2>
+            <h2>Technical writing</h2>
 
-                        <p>A running list of things I am working on in some capacity, or have finished.</p>  
-                        <ul class="listing">
-                            {% for project in projects %}
-                                <li>
-                                    <a href="projects/{{ project.title | slug }}">{{ project.title }}</a> -
+            <p>Write ups and walk throughs of various programming and development issues and projects I have undertaken.</p>
 
-                                    <time datetime="{{project.date }}">{{ project.date | dateDisplay("LLLL d, y") }}</time>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                    <div class="mesh-column-md-5 mesh-column-sm-12 mesh-push-md-1 ">
-                        <image src="images/pixelcountry.png"></image>
-                    </div>
-                </div>
-                <div class="mesh-void">
-                    <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">
-                        <h2>Beep boop theory</h2>
-                        <p>Continuing invesitgations and theory building concerning mike and mike-ideology.</p>
-                    </div>
-                    <div class="mesh-column-md-5 mesh-column-sm-12 mesh-push-md-1 ">
-                        <image src="images/ocean.jpg"></image>
-                    </div>
-                </div>
-                <div class="mesh-void">
-                    <div class="mesh-column-md-6  mesh-column-sm-12" id="homeText">
-                        <h2>Patchloop studies</h2>
-                        <p>beepboop.site is proud to be the web home of the renowned and crucial discipline of patchloop studies.  Browse the database, read about our collection, and order a historical patchloop for a loved one.</p>  
-                    </div>
-                    <div class="mesh-column-md-5 mesh-column-sm-12 mesh-push-md-1 ">
-                        <image src="images/hpatchloop.jpg"></image>
-                    </div>
-                </div>
-            </div>
-            {% include "footer.njk" %}
+            <ul class="listing">
+                {%- for page in collections.tposts | reverse -%}
+                <li>
+                    <a href="{{ page.url }}">{{ page.data.title }}</a> -
+                    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time>
+                </li>
+                {%- endfor -%}
+            </ul>
         </div>
-    </body>
+        <div>
+            <image src="images/birds.png"></image>
+        </div>
+        <div>
+            <h2>Other writings</h2>
+            <p> Write ups on culture and music and things like that. </p>
+            <ul class="listing">
+                {%- for page in collections.oposts | reverse -%}
+                <li>
+                    <a href="{{ page.url }}">{{ page.data.title }}</a> -
+                    <time datetime="{{ page.date }}">{{ page.date | dateDisplay("LLLL d, y") }}</time>
+                </li>
+                {%- endfor -%}
+            </ul>
+        </div>
+        <div>
+            <image src="images/boat4.jpg"></image>
+        </div>
+        <div>
+            <h2>Current projects</h2>
+
+            <p>A running list of things I am working on in some capacity, or have finished.</p>
+            <ul class="listing">
+                {% for project in projects %}
+                <li>
+                    <a href="projects/{{ project.title | slug }}">{{ project.title }}</a> -
+
+                    <time datetime="{{project.date }}">{{ project.date | dateDisplay("LLLL d, y") }}</time>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div>
+            <image src="images/pixelcountry.png"></image>
+        </div>
+        <div>
+            <h2>Beep boop theory</h2>
+            <p>Continuing invesitgations and theory building concerning mike and mike-ideology.</p>
+        </div>
+        <div>
+            <image src="images/ocean.jpg"></image>
+        </div>
+        <div>
+            <h2>Patchloop studies</h2>
+            <p>beepboop.site is proud to be the web home of the renowned and crucial discipline of patchloop studies. Browse the database, read about our collection, and order a historical patchloop for a loved one.</p>
+        </div>
+        <div>
+            <image src="images/hpatchloop.jpg"></image>
+        </div>
+    </div>
+    {% include "footer.njk" %}
+</body>
+
 </html>
-
-
-
-
-

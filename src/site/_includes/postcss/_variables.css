@@ -1,8 +1,3 @@
-/* breakpoints for media queries */
-$narrow: 400px;
-$mid: 740px;
-$wide: 1200px;
-
 /* colours */
 $page-color:#f5f7fa;
 $page-color2:#c3cfe2;
@@ -13,3 +8,22 @@ $accent-color:#696969;
 $dark-color: #000;
 $background-gradient: linear-gradient(90deg, $page-color 0%, $page-color2 100%);
 $header-gradient: linear-gradient(90deg, $head-color 0%, $head-color2 100%);
+
+/* https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862/ */
+@mixin for-phone-only {
+    @media (max-width: 599px) { @content; }
+}
+@mixin for-tablet-portrait-up {
+    @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+    @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+    @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+    @media (min-width: 1800px) { @content; }
+}
+
+

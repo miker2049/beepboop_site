@@ -1,140 +1,112 @@
 @import '_variables.css';
 @import '_syntax.css';
+@import '_home.css';
 
+@lost flexbox flex;
 
-@mesh-grid {
-    column-count: 12;
-    compile: true;
-    container-width: 100%;
-    display-type: flex;
-    gutter-on-outside: false;
-    gutter: 15px;
-    name: mesh;
-    query-condition: min-width;
-    responsive-gutter: false;
-    @mesh-viewport-sm {
-        container-width:calc($narrow - 20px);
-        viewport: $narrow;
-    }
-    @mesh-viewport-md {
-        container-width: calc($mid - 20px);
-        viewport: $mid;
-    }
-    @mesh-viewport-lg {
-        container-width: 960px;
-        viewport: 992px;
-    }
-    @mesh-viewport-xl {
-        container-width: calc($wide - 60px);
-        viewport: $wide;
-    }
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
 * {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 ::-moz-selection {
-  background-color: $text-color;
-  color: $page-color;
+    background-color: $text-color;
+    color: $page-color;
 }
 ::selection {
-  background-color: $text-color;
-  color: $page-color;
+    background-color: $text-color;
+    color: $page-color;
 }
 
 body {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.8;
-  min-height: 100vh;
-  background: $background-gradient;
+    /* lost-utility: edit; */
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    font-size:responsize;
+    line-height: 1.8;
+    min-height: 100vh;
+    background: $background-gradient;
 
-  @media (min-width: $narrow) {
-    font-size: 14px;
-  };
+    @include for-phone-only{
+        font-size: 14px;
+    }
 }
 
 .container {
-  padding-top: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  width:100%;
-  @media (max-width: $mid){
-      padding-top:130px;
-  }
+    padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    @include for-phone-only{
+        padding-top:130px;
+    }
 }
 
 
 h1, h2, h3 {
-  color: $text-color;
-  font-weight: 600;
-  margin-top: 1em;
-  margin-bottom:0.2em;
-  line-height: 1;
-  text-align: inherit;
+    color: $text-color;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom:0.2em;
+    line-height: 1;
+    text-align: inherit;
 }
-h1 {
-  font-size: 2em;
-  /* margin-top:0.4em; */
-  /* margin-bottom:0.2em; */
-  line-height: 1;
 
-  @media (min-width: $mid) {
-    font-size: 2em;
-  };
-  @media (min-width: $wide) {
-    font-size: 3em;
-  };
-}
+/* h1 { */
+/*     font-size: 1.5em; */
+/*     line-height: 1; */
+/*     @include for-tablet-portrait-up{ */
+/*         font-size: 2em; */
+/*     }; */
+/*     @include for-desktop-up { */
+/*         font-size: 5em; */
+/*     }; */
+/* } */
 
 p {
-  margin-top: 1em;
-  margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 .subtitle {
-  font-size: 1.2em;
-  margin-top: 1em;
-  margin-bottom: 3em;
+    font-size: 1.2em;
+    margin-top: 1em;
+    /* margin-bottom: 3em; */
 }
 
 ul, ol {
-  padding-left: 2em;
+    padding-left: 2em;
 }
 
 a:link,
 a:visited {
-  color: $text-color;
-  text-decoration: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: mix($text-color, $accent-color, 20%)
+    color: $text-color;
+    text-decoration: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: mix($text-color, $accent-color, 20%)
 }
+
 a:hover,
 a:focus {
-  color: $text-color;
-  border-bottom-color: $text-color;
+    color: $text-color;
+    border-bottom-color: $text-color;
 }
 
 .nakedLink a:link,
 .nakedLink a:visited,
 .nakedLink a:hover,
 .nakedLink a:focus {
-  border-bottom-style:none;
+    border-bottom-style:none;
 }
-.home-header{
-    z-index: 2;
-    background:$header-gradient;
-    height: auto;
-    margin:0px !important;
-}
-.header-title{
-    margin:auto;
-}
-.header{
+
+
+
+.normal-header{
     z-index: 2;
     background: $header-gradient;
     position:fixed;
@@ -142,85 +114,64 @@ a:focus {
     left:0px;
     right:0px;
     height: auto;
-    h1 {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
-    }
-    /* background-color:rgba(0,0,0,0.1); */
-    div > .header-nav{
-        margin: auto;
-        a {
-            margin:auto;
+    h2 {
+        margin-top: 0em;
+        margin-bottom: 0em;
+        text-align:center;
+        margin-left:0em;
+        @include for-tablet-portrait-up{
+            text-align: left;
+            margin-left: 0.5em;
         }
+        font-size:responsive;
+        min-font-size: 27px;
+        max-font-size: 50px;
     }
     padding-bottom:1em;
-    @media (max-width: $mid){
+    @include for-phone-only {
         position:relative;
         + .container{
             padding-top: 0;
         }
     }
+    lost-center:100%;
+    lost-align: bottom;
+    div {
+        lost-column: 1;
+        @include for-tablet-portrait-up{
+            lost-column:1/2;
+        }
+        a {
+            margin:1em;
+            font-size:responsive;
+        }
+        a:link,
+        a:visited {
+            color: mix($text-color, $accent-color, 20%);
+        }
+        padding-top:0.2em;
+        padding-bottom: 0.2em;
+    }
 }
 
-.nav {
-  padding-top: 3em;
-
-  li {
-      display: inline;
-  }
-
-  a:link,
-  a:visited {
-    display: inline-block;
-    border-top-style: solid;
-    border-top-width: 1px;
-    border-top-color: mix($text-color, $accent-color, 40%);
-    border-bottom-style: none;
-    padding-top: 0.8em;
-    padding-bottom: 2em;
-    margin-left: 0;
-    margin-right: 0.7em;
-    width: 9em;
-    text-align: left;
-    color: mix($text-color, $accent-color, 80%);
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-      color: mix($text-color, $accent-color, 10%);
-      border-top-color: $text-color;
-      border-bottom-style: none;
-  }
-
-  small {
-    display: block;
-    font-size: 0.7em;
-    color: mix($text-color,$accent-color, 60%);
-  }
-  li > img {
-      max-width:50%;
-      height:auto;
-      margin:auto;
-      margin-left:2em;
-  }
-}
 
 
 code {
-  font-size: 0.8em;
-  background-color: mix($text-color,$accent-color, 80%);
-  color: rgb(42, 65, 77);
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 6px;
-  padding-right: 6px;
-  border-radius: 4px;
-  white-space: nowrap;
+    font-size: 0.8em;
+    background-color: mix($text-color,$accent-color, 80%);
+    color: rgb(42, 65, 77);
+    padding-top: 4px;
+    padding-bottom: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+    border-radius: 4px;
+    white-space: nowrap;
 }
 
 .date {
-  font-size: 0.8em;
-  font-style: italic;
+    font-size: 0.8em;
+    font-style: italic;
+    padding-left: 20px;
 }
 
 /* main { */
@@ -228,61 +179,54 @@ code {
 /* } */
 
 pre {
-  overflow: auto;
-  max-width:75%;
-  border-radius: 6px;
-  code {
-    border-style: none;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0;
-    padding-right: 0;
-  }
+    overflow: auto;
+    max-width:75%;
+    border-radius: 6px;
+    code {
+        border-style: none;
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 
 footer {
-  margin-top: 6em;
-  padding-top: 4em;
-  padding-bottom: 6em;
-  border-top-width: 1px;
-  border-top-style: solid;
-  border-top-color: mix($text-color, $accent-color, 10%);
-  font-size: 0.7em;
-  color: mix($text-color, $accent-color, 50%);
+    margin-top: 6em;
+    padding-top: 4em;
+    padding-bottom: 6em;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: mix($text-color, $accent-color, 10%);
+    font-size: 0.7em;
+    color: mix($text-color, $accent-color, 50%);
 
-  a:link,
-  a:visited {
-    color: mix($text-color, $accent-color, 90%);
-    border-bottom: solid 1px mix($accent-color, $page-color, 70%);
-  }
-  a:hover,
-  a:focus {
-    color: $text-color;
-    border-bottom: solid 1px $text-color;
-  }
+    a:link,
+    a:visited {
+        color: mix($text-color, $accent-color, 90%);
+        border-bottom: solid 1px mix($accent-color, $page-color, 70%);
+    }
+    a:hover,
+    a:focus {
+        color: $text-color;
+        border-bottom: solid 1px $text-color;
+    }
 }
 
 .posts {
-    p, h2, h3, h4, h5 {
-        max-width:50%;
-        @media (max-width: $wide) {
+    p, h1, h2, h3, h4, h5 {
+        padding-left: 20px;
+        max-width:90%;
+        @include for-desktop-up {
             max-width: 90%;
         };
     }
     margin-left: 20px;
+    .date{
+    }
 }
 
-#homeText{
-    text-align: left;
-    margin-top: 1em;
-}
-
-img{
-    margin-top:1em;
-    height:auto;
-    width: 100%;
-}
 .gallery-video{
     padding:66.27% 0 0 0;
     position:relative;

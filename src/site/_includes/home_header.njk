@@ -1,32 +1,25 @@
 <header class="home-header">
-    <div class="mesh-container">
-        <div class="mesh-void">
-            <div id="headerTitle" class="mesh-column-md-5 mesh-push-md-1 mesh-column-sm-12">
-                <h1>{{ title }}</h1>
-                {%- if subtitle %}<p class="subtitle">{{ subtitle | safe }}</p>{% endif %}
-            </div>
-            <div class="mesh-column-md-6 mesh-column-sm-12 mesh-push-md-2">
-                <ul class="nav mesh-void">
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <a href="/about">about<small>all about this</small></a>
-                    </li>
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <a href="/posts">posts<small>the posts</small></a>
-                    </li>
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <a href="/projects">projects<small>things I am working on</small></a>
-                    </li>
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <a href="/gallery">gallery<small>vids to see</small></a>
-                    </li>
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <a href="/gallery">shop<small>...and patchloop studies</small></a>
-                    </li>
-                    <li class="mesh-column-md-3 mesh-column-sm-5">
-                        <image src="/images/chipmunk.png" alt="squirrel emoji" />
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div class="header-title">
+        <h1>{{ title }}</h1>
     </div>
+    <nav class="home-nav">
+        <div>
+            <a href="/about">about<small>all about this</small></a>
+        </div>
+        <div>
+            <a href="/posts">posts<small>the posts</small></a>
+        </div>
+        <div>
+            <a href="/projects">projects<small>things I am working on</small></a>
+        </div>
+        <div>
+            <a href="/gallery">gallery<small>vids to see</small></a>
+        </div>
+        <div>
+            <a href="/gallery">shop<small>...and patchloop studies</small></a>
+        </div>
+        <div>
+            <image src="/images/chipmunk.png" alt="squirrel emoji" />
+        </div>
+    </nav>
 </header>
