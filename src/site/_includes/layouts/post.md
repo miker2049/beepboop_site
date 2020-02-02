@@ -12,11 +12,13 @@ Posted on
 </p>
 </span>
 <div class="posts">
-      {{ content | safe }}
-   </div>
-   <div class="footnote">
-      <!-- <p> -->
-      <!--   This page is part of the posts section. -->
-      <!-- </p> -->
-   </div>
+<div class="text-content">
+{{ content | safe }}
+</div>
+</div>
+<div class="footnote">
+<!-- <p> -->
+<!--   This page is part of the posts section. -->
+<!-- </p> -->
+</div>
 </main>

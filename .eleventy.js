@@ -52,8 +52,12 @@ module.exports = function(config) {
 
     config.addShortcode("vimeoEmbed", function(title, id) {return vimeoEmbed(title,id);});
     config.addShortcode("vimeoEmbedRaw", function(title, id) {return vimeoEmbedRaw(title,id);});
+    config.addShortcode("sketchEmbed", function(title){
+        return`<iframe src="/sketches/${title}/" frameborder="0" scrolling="no" onload="resizeIframe(this)" ></iframe>`;
+    });
     // pass some assets right through
     config.addPassthroughCopy("./src/site/images");
+    config.addPassthroughCopy("./src/site/js");
 
     // make the seed target act like prod
     env = (env=="seed") ? "prod" : env;
@@ -66,7 +70,8 @@ module.exports = function(config) {
         templateFormats : ["njk", "md", "11ty.js", "html"],
         htmlTemplateEngine : "njk",
         markdownTemplateEngine : "njk",
-        passthroughFileCopy: true
+        passthroughFileCopy: true,
+        jsDataFileSuffix: ".11tydata"
     };
 
 };

@@ -26,7 +26,7 @@ body {
     /* lost-utility: edit; */
     font-family: 'Roboto Mono', monospace;
     font-weight: 300;
-    font-size:responsize;
+    font-size:responsive;
     line-height: 1.8;
     min-height: 100vh;
     background: $background-gradient;
@@ -38,11 +38,12 @@ body {
 
 .container {
     padding-top: 100px;
-    margin-left: auto;
-    margin-right: auto;
-    width:100%;
-    @include for-phone-only{
+    margin-left:10px;
+    margin-right:10px;
+    @include for-tablet-landscape-up{
         padding-top:130px;
+        margin-left:50px;
+        margin-right:50px;
     }
 }
 
@@ -110,7 +111,6 @@ code {
     padding-left: 20px;
 }
 
-
 pre {
     overflow: auto;
     max-width:75%;
@@ -124,19 +124,16 @@ pre {
     }
 }
 
-.posts {
-    p, h1, h2, h3, h4, h5 {
-        padding-left: 20px;
-        max-width:90%;
-        @include for-desktop-up {
-            max-width: 90%;
-        };
-    }
-    margin-left: 20px;
-    .date{
+.text-content {
+    lost-column: 1;
+    @include for-tablet-portrait-up{
+        lost-column: 2/3;
     }
 }
 
+canvas{
+    visibility: visible !important;
+}
 .gallery-video{
     padding:66.27% 0 0 0;
     position:relative;

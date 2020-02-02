@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    {% if p5js %}
+        <script language="javascript" type="text/javascript" src="/js/p5.min.js"></script>
+    {% endif %}
     <title>{{ title }}</title>
   </head>
   <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
@@ -16,10 +19,10 @@
     </div>
 
     {% set js %}
-    {% include "js/core.js" %}
-    {% include "js/hello.js" %}
+    {#% include "js/core.js" %#}
+    {% include "js/resizeIframe.js" %}
     {% endset %}
-    <script>{{ js | jsmin | safe }}</script>
+    <script>{{ js | safe }}</script>
 
   </body>
 </html>
