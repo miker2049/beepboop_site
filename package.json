@@ -24,7 +24,7 @@
     "html-minifier": "^4.0.0",
     "install": "^0.13.0",
     "luxon": "^1.22.0",
-    "npm": "^6.13.6",
+    "npm": "^6.14.4",
     "orga": "^1.7.0",
     "orga-rehype": "^1.7.0",
     "orga-unified": "^1.7.0",
@@ -44,7 +44,10 @@
     "unified": "^8.4.2",
     "unist-util-select": "^3.0.0",
     "unist-util-visit": "^2.0.1",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.4.23",
+    "kind-of": ">=6.0.3",
+    "minimist": ">=1.2.3",
+    "acorn": ">=5.7.4"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",

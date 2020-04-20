@@ -21,7 +21,7 @@ This then leads to a kind transmuted homoeroticism directed towards characters l
 
 These factors then contributed to a seemingly simple jealousy at Kevin's playing: I simply wished to feel what he felt when the fingers moved and those cossonances sounded, and was bitter that an otherwise peer could have access to such a thing and I didnt.  But these days I think that this simple jealousy merely covered up a deeper and more abstract shame, formulated roughly as "how could I possibly appreciate the music I do, in the personal and genius way I feel I do, if I can't even play it; who am I to really appreciate anything?"  At this point I was surely already resigned from other available paths toward personal (and social) fullfillment like sports or art. This form of shame is powerful in me, and has manifested in many good and bad ways in my life, and has accentuated every moment of justified shame I have felt (which increases in frequency as I get older).
 
-In Freudian parlance (stick with me here), the concept of _sublimation_ revolves around the idea that there are forces, images, inclinations within you that are agnostic to what object they end up attaching to in lived experience.  So, the feeling of satisfaction you get when read a good book, or cultivate a skill, or make a delicious dinner, or play guitar, is deep down a satisfaction for something else, something in itself ineffable and unknowable in a very literal sense, but something you nonetheless are close to when you do those things.  In this, the attribution of transcendence to Kevin playing Stairway to Heaven is founded.  The ensemble of cognitive and physical conditioning upon the template of an instrument can become more than the sum of its parts precisely because the effort of practice to get to a point of playing a song on the guitar can be evidence of an accomplished sublimation of internal, usually terrible psychic forces.  With some unformed idea like this in my own head, and having no lack of psychic conflict of my own as an insecure 13 year old, I calculated my distance from Kevin in this moment in the metrics of my own inability to generally be ok with day to day existence.  His musical accomplishment was yet another example of my own failure of agency to live in fullfilling ways.  
+In Freudian parlance, the concept of _sublimation_ revolves around the idea that there are forces, images, inclinations within you that are agnostic to what object they end up attaching to in lived experience.  So, the feeling of satisfaction you get when read a good book, or cultivate a skill, or make a delicious dinner, or play guitar, is deep down a satisfaction for something else, something in itself ineffable and unknowable in a very literal sense, but something you nonetheless are close to when you do those things.  In this, the attribution of transcendence to Kevin playing Stairway to Heaven is founded.  The ensemble of cognitive and physical conditioning upon the template of an instrument can become more than the sum of its parts precisely because the effort of practice to get to a point of playing a song on the guitar can be evidence of an accomplished sublimation of internal, usually troubling psychic forces.  With some unformed idea like this in my own head, and having no lack of psychic conflict of my own as an insecure 13 year old, I calculated my distance from Kevin in this moment in the metrics of my own inability to generally be ok with day to day existence.  His musical accomplishment was yet another example of my own failure of agency to live in fullfilling ways.  
 
 Compound this then with the overvaluation of musical talent over other important musical qualities, and the distant but godly father substitutes of Page, Moon, Gilmour, et al, and you have that blush of mine on that day: shame, wrapped in desire, with a justified idea that transcendence was happening before me, transcendence that could be mine, if I wasn't so helplessly inadequate with any one thing.
 
@@ -42,6 +42,23 @@ TODO embed first song
 
 In honest reflection, this feeling of 
 
+----
 
+### harmony and repititions
+
+As shame turns to yearning and self-congratulation, and back again, and back again, so the years go by.  What is it that I chase around in those years?  Is it simply a long chain of my own depressive causation, with no ground and no resolution?  Yes, but this can be brought out more.
+
+Well, one thing someone with a musical ear can maybe hear in these pieces is the fixation on major seventh chords, and C major 7 specifically.  TODO [some number] of the 30 pieces above can roughly be said to be in Cmaj7, or uses that chord importantly. Major 7 chords are typically registered as "jazzy" by people: a laid back, open, relatively non-functional feeling, far removed in feeling from minor 7 chords, which are distinguished by in only one semitone.
+
+Wikipedia gives the first movement of Erik Satie's _Gymnopiedes_ as a widely recognizable example of something that heavily uses major 7s. 
+
+To use major 7s in music is one thing, but to have your tonic in major 7 is something extra.  It immedateily makes the major tonality of a piece a bittersweet major, the home you find yourself in is damaged, humble, grateful, isolated, and hopeful all at once, to my ears. Further, there is a kind of non-commitment inherit in it, that this music that is happening is only relaying to me a bigger music.  The harmony itself feel's "sampled" from some master recording.   
+
+
+
+One thing I exploit often is the relationship between a tonic major 7, and the minor third.  As the top three notes of a major seven chord in themselves form that minor chord, and the minor third is the relative minor of the dominant.
+
+
+This idea that the music is only ever relaying a bigger music is key, has been the ground of many of my frustrations in trying to make actual music.  There is at once never enough time to.
 
 
