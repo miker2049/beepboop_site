@@ -5,6 +5,7 @@ date: Last Modified
 ---
 
 Ok, so I as I am getting more serious about this site, or rather, as I slowly become more and more desperate to do anything at all, I consider what I want:
+Hmm...
 
 #### I want to be flexible in both *how* and *when* I update the site.  
 I am just having fun, aspiring to build some quirky monolith, and learning about frontend development.  I want to populate this space with mostly my experiments and maybe occasional writings.  I dont want to be tied to a simple ritual of making a markdown file, writing something, and then posting it.  *c'est non un blog*.  (is "blog" masculine in french?)  

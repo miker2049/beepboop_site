@@ -1,0 +1,13 @@
+
+
+{% set css %}
+{% include 'css/mvp.css' %}
+{% include 'css/extra.css' %}
+{% if page.url === '/' %}
+    {% include 'css/home.css' %}
+{% endif %}
+{% endset %}
+
+<style>
+ {{ css | cssmin | safe }}
+</style>
