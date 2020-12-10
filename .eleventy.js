@@ -1,77 +1,89 @@
-const orgParse = require('./src/utils/org/org_parser');
-const vimeoEmbed = require('./src/utils/vimeoEmbed');
-const vimeoEmbedRaw = require('./src/utils/vimeoEmbedRaw');
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+/**
+ * @file Configures preferences for Eleventy
+ * @author Reuben L. Lillie <reubenlillie@gmail.com>
+ * @see {@link https://www.11ty.dev/docs/config/ 11ty Documentation}
+ */
 
+// Require native Node.js modules
+var fs = require('fs')
 
-module.exports = function(config) {
+/**
+ * Require the includes module for the following.
+ *
+ * - Filters (for modifying content on input)
+ * - Shortcodes (for reusable content)
+ * - Transforms (for modifying a template’s output)
+ *
+ * Storing these modules in separate directories,
+ * rather than all in this file,
+ * helps keep the codebase organized—at least that’s the idea.
+ */
+var includes = require('./_includes/index')
 
-    // A useful way to reference the context we are runing eleventy in
-    let env = process.env.ELEVENTY_ENV;
+/**
+ * 11ty’s configuration module
+ * @module .eleventy
+ * @param {Object} eleventyConfig 11ty’s Config API
+ * @return {Object} 11ty’s Config object optional
+ * @see {@link https://www.11ty.dev/docs/config/ Configuring 11ty}
+ */
+module.exports = function (eleventyConfig) {
 
-    // Layout aliases can make templates more portable
-    config.addLayoutAlias('default', 'layouts/base.njk');
+  // Pass 11ty’s Conig object to the includes module (~/_includes)
+  includes(eleventyConfig)
 
-    config.addDataExtension('org', contents =>{
-        let parsed =orgParse(contents);
-        // console.log(parsed);
-        parsed = parsed.filter(project=>{return project.keyword==="PUBLISH" });
-        return parsed;
-    });
+  /**
+   * Combine data in the Eleventy data cascade, rather than overwriting it
+   * @see {@link https://www.11ty.dev/docs/data-deep-merge/ Data deep merge in 11ty}
+   */
+  eleventyConfig.setDataDeepMerge(true)
 
-    config.addCollection("tposts", function(collection) {
-        return collection.getFilteredByTags("post", "tech");
-    });
+  /**
+   * Copy static assets to the output directory
+   * @see {@link https://www.11ty.dev/docs/copy/ Passthrough copy in 11ty}
+   */
+  eleventyConfig.addPassthroughCopy('css')
 
-    config.addCollection("oposts", function(collection) {
-        return collection.getFilteredByTags("post", "other");
-    });
-    config.setDataDeepMerge(true);
+  /**
+   * Have Eleventy watch the following additional files for live browsersync
+   * @see @{@link https://www.11ty.dev/docs/config/#add-your-own-watch-targets Add your own watch targets in 11ty}
+   */
+  eleventyConfig.addWatchTarget('./**/*.css')
+  eleventyConfig.addWatchTarget('./**/*.js')
 
-    // Add some utility filters
-    config.addFilter("squash", require("./src/utils/filters/squash.js") );
-    config.addFilter("dateDisplay", require("./src/utils/filters/date.js") );
+  /**
+   * Serve the rendered 404 page when using `eleventy --serve` locally
+   * @see {@link https://www.11ty.dev/docs/quicktips/not-found/#with-serve Adding a 404 page in 11ty}
+   */
+  eleventyConfig.setBrowserSyncConfig({
+    callbacks: {
+      ready: (err, bs) => {
+        bs.addMiddleware("*", (req, res) => {
+          const content_404 = fs.readFileSync('_site/404.html');
+          // Provides the 404 content without redirect
+          res.write(content_404);
+          // Add 404 http status code in request header
+          // res.writeHead(404, { "Content-Type": "text/html" })
+          res.writeHead(404);
+          res.end()
+        })
+      }
+    }
+  })
 
-
-    // add support for syntax highlighting
-    config.addPlugin(syntaxHighlight);
-
-    // minify the html output
-    config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
-
-    // compress and combine js files
-    config.addFilter("jsmin", function(code) {
-        const UglifyJS = require("uglify-js");
-        let minified = UglifyJS.minify(code);
-        if( minified.error ) {
-            console.log("UglifyJS error: ", minified.error);
-            return code;
-        }
-        return minified.code;
-    });
-
-    config.addShortcode("vimeoEmbed", function(title, id) {return vimeoEmbed(title,id);});
-    config.addShortcode("vimeoEmbedRaw", function(title, id) {return vimeoEmbedRaw(title,id);});
-    config.addShortcode("sketchEmbed", function(title){
-        return`<iframe src="/sketches/${title}/" frameborder="0" scrolling="no" onload="resizeIframe(this)" ></iframe>`;
-    });
-    // pass some assets right through
-    config.addPassthroughCopy("./src/site/images");
-    config.addPassthroughCopy("./src/site/js");
-
-    // make the seed target act like prod
-    env = (env=="seed") ? "prod" : env;
-    return {
-        dir: {
-            input: "src/site",
-            output: "dist",
-            data: `_data`
-        },
-        templateFormats : ["njk", "md", "11ty.js", "html"],
-        htmlTemplateEngine : "njk",
-        markdownTemplateEngine : "njk",
-        passthroughFileCopy: true,
-        jsDataFileSuffix: ".11tydata"
-    };
-
-};
+  // If you want to use an alternative file structure,
+  // then you can uncomment this return statement
+  // and change the values for one or more of these directories
+  // (defaults shown).
+  /*
+  return {
+    dir: {
+      input: '.',
+      includes: '_includes',
+      data: '_data',
+      output: '_site'
+    },
+    pathPrefix: '/',
+  }
+  */
+}

@@ -1,57 +1,29 @@
 {
-  "name": "EleventyOne",
-  "version": "3.0.0",
-  "description": "A project bootstrap for Eleventy sites. With pipelines for PostCSS, JavaScript, and serverless functions",
-  "author": "Phil Hawksworth",
-  "license": "MIT",
+  "name": "eleventy-dot-js-blog",
+  "version": "0.1.1",
+  "description": "A starter project showing how to build a blog with the Eleventy static site generator using JavaScript templates.",
+  "main": "index.js",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-    "debug": "cross-env DEBUG=Eleventy* ELEVENTY_ENV=dev eleventy --serve",
-    "build": "cross-env ELEVENTY_ENV=prod eleventy",
-    "seed": "cross-env ELEVENTY_ENV=seed eleventy"
+    "build": "ELEVENTY_ENV=production npx eleventy",
+    "dev": "ELEVENTY_ENV=development npx eleventy --serve",
+    "debug": "DEBUG=* npx eleventy"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/philhawksworth/eleventyone"
+    "url": "git://github.com/reubenlillie/eleventy-dot-js-blog.git",
+    "https": "https://gitlab.com/reubenlillie/eleventy-dot-js-blog.git",
+    "editUrl": "https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/edit/master"
   },
-  "dependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.3",
-    "autoprefixer": "^9.7.4",
-    "axios": "^0.19.2",
-    "cssnano": "^4.1.10",
-    "dotenv": "^8.2.0",
-    "html-minifier": "^4.0.0",
-    "install": "^0.13.0",
-    "luxon": "^1.22.0",
-    "npm": "^6.14.4",
-    "orga": "^1.7.0",
-    "orga-rehype": "^1.7.0",
-    "orga-unified": "^1.7.0",
-    "postcss": "^7.0.26",
-    "postcss-color-function": "^4.1.0",
-    "postcss-color-mix": "^1.1.0",
-    "postcss-comment": "^2.0.0",
-    "postcss-import": "^12.0.1",
-    "postcss-mesh": "^1.1.8",
-    "postcss-mixins": "^6.2.3",
-    "postcss-responsive-type": "^1.0.0",
-    "postcss-simple-vars": "^5.0.2",
-    "precss": "^4.0.0",
-    "rehype": "^9.0.1",
-    "rehype-stringify": "^6.0.1",
-    "uglify-js": "^3.7.6",
-    "unified": "^8.4.2",
-    "unist-util-select": "^3.0.0",
-    "unist-util-visit": "^2.0.1",
-    "xml2js": "^0.4.23",
-    "kind-of": ">=6.0.3",
-    "minimist": ">=1.2.3",
-    "acorn": ">=5.7.4"
+  "author": "Reuben L. Lillie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/reubenlillie/eleventy-dot-js-blog/issues"
   },
+  "homepage": "https://gitlab.com/reubenlillie/eleventy-dot-js-blog#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "cross-env": "5.2.0",
-    "lost": "^8.3.1"
+    "@11ty/eleventy": "^0.11.0",
+    "clean-css": "^4.2.3",
+    "html-minifier": "^4.0.0",
+    "terser": "^4.6.13"
   }
 }

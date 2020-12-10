@@ -1,79 +1,112 @@
-# adding things here
-Here is my site
-# EleventyOne
+# eleventy-dot-js-blog
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/056b4a67-70e6-4af4-9be5-dee151b8e906/deploy-status)](https://app.netlify.com/sites/eleventyone/deploys)
+A starter project showing how to build a blog with the [Eleventy](https://11ty.dev/) static site generator using [JavaScript templates (`*.11ty.js`)](https://11ty.dev/languages/javascript/).
 
-Phil's first port of call when starting another project using Eleventy.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/cd87e631-aeaa-45fe-9c99-800ef96b53b1/deploy-status)](https://app.netlify.com/sites/eleventy-dot-js-blog/deploys)
 
-This project scaffold includes:
+## Demo
 
-- [Eleventy](https://11ty.io) with a skeleton site
-- A date format filter for Nunjucks based on [Luxon](https://moment.github.io/luxon)
-- A tiny CSS pipeline with PostCSS
-- A tiny inline JS pipeline
-- JS search index generator
-- [Netlify Dev](https://www.netlify.com/products/dev) for testing [Netlify redirects](https://netlify.com/docs/redirects/)
-- Serverless (FaaS) development pipeline with [Netlify Dev](https://www.netlify.com/products/dev) and [Netlify Functions](https://www.netlify.com/products/functions)
+* [Netlify](https://eleventy-dot-js-blog.netlify.com/)
 
+## Summary
 
-![Eleventy screenshot](./eleventyone-template.jpg)
+The [layouts](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/tree/master/_includes/layouts) are written entirely in vanilla JavaScript (files with the [`*.11ty.js`](https://www.11ty.dev/docs/languages/javascript/) extension). Eleventy processes those templates and creates prerendered copies of the site HTML.
 
+## Features
 
-## Instructions
+* 💯 Lighthouse scores for 
+  * 💨 Performance 
+  * ♿ Accessibility
+  * ☑️  Best practices
+  * 🔍 Search Engine Optimization
+* 🏸 Lightweight front end
+  * 🕸 Semantic HTML
+  * 🎨 Progressively-enhanced, modular CSS
+  * 🍦 Vanilla [JavaScript templates](https://11ty.dev/languages/javascript/)
+* 🎛️ Customizable design and data options
+* 🍬 [Choose](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/blob/master/_includes/shortcodes/favicon.js) between emoji favicons and the Real Favicon Generator
+* 💡 Dark/light mode based on user’s system preferences
+* 🔣 Multilingual support (instructions in [`./content/README.md`](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/blob/master/content/README.md) and [`./_data/README.md`](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/blob/master/_data/README.md))
+* 🔖 Smart pagination
+* 🗒️ Extensive inline documentation
 
-To get your own instance of this 11ty starter project cloned and deploying to Netlify very quickly, just click the button below and follow the instructions.
+## Project Roadmap
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/philhawksworth/eleventyone)
+Here’s a list of new features being considered. [Submit a feature request](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/issues/new) to add to this list!
 
+* 🎚️ Dark/light mode toggle #14
+* 🏷️ Tag archives for blog (coming with [Computed Data](https://www.11ty.dev/docs/data-computed/) in Eleventy v0.11.0) #7
+* 🗓 Date archives for blog #16
+* 💌 Contact form (using [Netlify Forms](https://docs.netlify.com/forms/setup/)) #17
+* 📡 [RSS feed](https://www.11ty.dev/docs/plugins/rss/) for blog posts #3
+* 🗺️ Sitemap #54
+* 🔍 [Search](https://www.hawksworx.com/blog/adding-search-to-a-jamstack-site/) #18
+* 📄 Documentation site #19
+* 📣 [Webmentions](https://mxb.dev/blog/using-webmentions-on-static-sites/) #20
+* 💬 [Comments](https://jamstack-comments.netlify.com/) #21
+* 📝 Integrate with [Netlify CMS](https://www.netlifycms.org/) #22
+* ⚙️  Service worker to cache content for offline access #23
+* 🖌️ Apply logo/branding assets #24
+* 🖍️ [Syntax highlighting](https://www.11ty.dev/docs/plugins/syntaxhighlight/) for code blocks #25
+* ✍️  Author information posts (options for mulitple authors and guest submissions) #26
 
-## Wait, what happens when I click that button?
+## Getting started
 
-Good question. Here's what it will do...
+Run a local copy of this site on your computer.
 
-1. Netlify will clone the git repository of this project into your Github account. It will be asking for permission to add the repo for you.
-2. We'll create a new site for you in Netlify, and configure it to use your shiny new repo. Right away you'll be able to deploy changes simply by pushing changes to your repo.
-3. That's it really.
+Install [Node.js](https://nodejs.org/) on your machine (see [11ty documentation for version requirements](https://www.11ty.dev/docs/getting-started/)).
 
+Then enter the following commands into your terminal:
 
-## Prerequisites
+### 1. Clone this repository and all its dependencies
 
-- [Node and NPM](https://nodejs.org/)
+```cli
+git clone git@gitlab.com:reubenlillie/eleventy-dot-js-blog.git my-blog-directory-name
+```
 
-## Running locally
+### 2. Go to the working directory
 
-```bash
-# install the dependencies
+```cli
+cd my-blog-directory-name
+```
+Specifically take a look at the file named [`.eleventy.js`](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/blob/master/.eleventy.js) to see if you want to [configure any Eleventy options differently](https://www.11ty.dev/docs/config/).
+
+### 3. Install the project dependencies with [NPM](https://www.npmjs.com/)
+
+```cli
 npm install
-
-# External data sources can be stashed locally
-npm run seed
-
-# It will then be available locally for building with
-npm run start
 ```
 
-## Add some Netlify helpers
-Netlify Dev adds the ability to use Netlify redirects, proxies, and serverless functions.
+### 4. Edit the `.js` files in the [`_data`](https://gitlab.com/reubenlillie/eleventy-dot-js-blog/-/blob/master/_data/site.js) directory with your site information
 
-```bash
-# install the Netlify CLI in order to get Netlify Dev
-npm install -g netlify-cli
+### 5. Run Eleventy
 
-# run a local server with some added Netlify sugar in front of Eleventy
-netlify dev
+```cli
+npx eleventy
 ```
 
-A serverless functions pipeline is included via Netlify Dev. By running `netlify dev` you'll be able to execute any of your serverless functions directly like this:
+Or build and host locally for local development
 
-- /.netlify/functions/hello
-- /.netlify/functions/fetch-joke
+```cli
+npx eleventy --serve
+```
 
+Or build automatically when a template changes
 
-### Redirects and proxies
+```cli
+npx eleventy --watch
+```
 
-Netlify's Redirects API can provide friendlier URLs as proxies to these URLs.
+Or in debug mode
 
-- /api/hello
-- /api/fetch-joke
+```cli
+DEBUG=* npx eleventy
+```
 
+## Publish your own copy
+
+The command `npm run build` will generate a copy of the site files in a `_site` directory, which you can deploy with any hosting service.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://gitlab.com/reubenlillie/eleventy-dot-js-blog)
+
+&copy; 2020 by [Reuben L. Lillie](https://twitter.com/reubenlillie)
